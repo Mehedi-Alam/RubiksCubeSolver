@@ -19,15 +19,3 @@ This project bridges a React-based frontend with a powerful Java backend to solv
 2. **Heuristic Search:** The Java backend receives the scrambled state and initiates an Iterative Deepening A* (IDA*) search. 
 3. **Pattern Databases:** To keep the search time extremely low, the algorithm relies on pre-computed pattern databases (such as `cornerDB.bin`). These act as lookup tables that instantly tell the algorithm the minimum number of moves required to solve specific subsets of the cube, dramatically pruning the search tree.
 4. **Resolution:** Once the optimal move sequence is found, it is sent back to the frontend, allowing the user to follow the steps to solve the cube.
-
-*Note: The `cornerDB.bin` heuristic lookup table is generated locally on the first run rather than tracked in version control, as it exceeds standard Git file size limits.*
-
-## Local Setup
-
-To run this project locally, you will need two terminal windows to run the frontend and backend concurrently.
-
-### 1. Backend (Java Spring Boot)
-Navigate to the backend directory and start the Spring Boot server:
-```bash
-cd rubiks
-./mvnw spring-boot:run
